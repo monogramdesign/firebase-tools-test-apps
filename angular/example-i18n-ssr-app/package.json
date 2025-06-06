@@ -4,7 +4,12 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
+    "start:en": "ng serve --configuration=en",
+    "start:pl": "ng serve --configuration=pl",
     "build": "ng build",
+    "build:i18n": "ng build --localize",
+    "build:prod": "ng build --configuration=production --localize",
+    "extract-i18n": "ng extract-i18n",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "serve:ssr:example-i18n-ssr-app": "node dist/example-i18n-ssr-app/server/server.mjs"
@@ -15,6 +20,7 @@
     "@angular/compiler": "^20.0.0",
     "@angular/core": "^20.0.0",
     "@angular/forms": "^20.0.0",
+    "@angular/localize": "^20.0.0",
     "@angular/platform-browser": "^20.0.0",
     "@angular/platform-server": "^20.0.0",
     "@angular/router": "^20.0.0",

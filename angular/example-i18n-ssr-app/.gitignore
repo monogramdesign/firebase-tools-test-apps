@@ -43,3 +43,8 @@ Thumbs.db
 
 # Vscode
 .vscode/*
+
+# Firebase
+.firebase/
+.firebase/hosting.database.rules.json
+.firebase/hosting.database.rules.json
