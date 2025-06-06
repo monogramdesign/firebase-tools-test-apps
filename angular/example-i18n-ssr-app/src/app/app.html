@@ -1,0 +1,54 @@
+<div class="app-container">
+  <header class="header">
+    <h1 i18n="@@welcome.title">Welcome to Angular i18n SSR App</h1>
+    <nav class="language-switcher">
+      <a href="/en/" i18n="@@nav.english">English</a>
+      <a href="/pl/" i18n="@@nav.polish">Polski</a>
+    </nav>
+  </header>
+
+  <main class="main-content">
+    <section class="hero">
+      <h2 i18n="@@hero.subtitle">A modern Angular application with internationalization and server-side rendering</h2>
+      <p i18n="@@hero.description">
+        This application demonstrates how to implement i18n (internationalization)
+        with SSR (Server-Side Rendering) in Angular, ready for Firebase deployment.
+      </p>
+    </section>
+
+    <section class="features">
+      <h3 i18n="@@features.title">Features</h3>
+      <ul>
+        <li i18n="@@features.i18n">Full internationalization support</li>
+        <li i18n="@@features.ssr">Server-side rendering for better SEO</li>
+        <li i18n="@@features.firebase">Firebase hosting ready</li>
+        <li i18n="@@features.modern">Modern Angular architecture</li>
+      </ul>
+    </section>
+
+    <section class="demo">
+      <h3 i18n="@@demo.title">i18n Demo</h3>
+      <p i18n="@@demo.current-time">Current time: {{ currentTime() | date:'medium' }}</p>
+
+      <div class="counter-demo">
+        <button (click)="incrementCounter()" i18n="@@demo.increment">Increment</button>
+        <button (click)="decrementCounter()" i18n="@@demo.decrement">Decrement</button>
+        <p i18n="@@demo.counter">Items count: {{ counter() }}</p>
+        <p i18n="@@demo.plural">{{ pluralMessage() }}</p>
+      </div>
+    </section>
+
+    <section class="locale-info">
+      <h3 i18n="@@locale.title">Locale Information</h3>
+      <p i18n="@@locale.current">Current locale: <strong>{{ currentLocale }}</strong></p>
+      <p i18n="@@locale.date-format">Date format example: {{ currentTime() | date:'short' }}</p>
+      <p i18n="@@locale.currency-format">Currency format example: {{ price | currency:currency:'symbol':'1.2-2' }}</p>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p i18n="@@footer.copyright">© 2025 Angular i18n SSR Example. All rights reserved.</p>
+  </footer>
+</div>
+
+<router-outlet></router-outlet>

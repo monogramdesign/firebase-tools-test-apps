@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file source-language="en-US" target-language="pl" datatype="plaintext" original="ng2.template">
+    <body>
+      <trans-unit id="welcome.title" datatype="html">
+        <source>Welcome to Angular i18n SSR App</source>
+        <target>Witamy w aplikacji Angular i18n SSR</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/app.html</context>
+          <context context-type="linenumber">3,4</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="nav.english" datatype="html">
+        <source>English</source>
+        <target>Angielski</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/app.html</context>
+          <context context-type="linenumber">5,6</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="nav.polish" datatype="html">
+        <source>Polski</source>
+        <target>Polski</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/app.html</context>
+          <context context-type="linenumber">6,8</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="hero.subtitle" datatype="html">
+        <source>A modern Angular application with internationalization and server-side rendering</source>
+        <target>Nowoczesna aplikacja Angular z internationalizacją i renderowaniem po stronie serwera</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/app.html</context>
+          <context context-type="linenumber">12,13</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="hero.description" datatype="html">
+        <source> This application demonstrates how to implement i18n (internationalization) with SSR (Server-Side Rendering) in Angular, ready for Firebase deployment. </source>
+        <target> Ta aplikacja demonstruje jak implementować i18n (internationalizację) z SSR (Server-Side Rendering) w Angular, gotową do wdrożenia na Firebase. </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/app.html</context>
+          <context context-type="linenumber">14,17</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="features.title" datatype="html">
+        <source>Features</source>
+        <target>Funkcjonalności</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/app.html</context>
+          <context context-type="linenumber">20,22</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="features.i18n" datatype="html">
+        <source>Full internationalization support</source>
+        <target>Pełne wsparcie dla internationalizacji</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/app.html</context>
+          <context context-type="linenumber">22,23</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="features.ssr" datatype="html">
+        <source>Server-side rendering for better SEO</source>
+        <target>Renderowanie po stronie serwera dla lepszego SEO</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/app.html</context>
+          <context context-type="linenumber">23,24</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="features.firebase" datatype="html">
+        <source>Firebase hosting ready</source>
+        <target>Gotowe do hostingu na Firebase</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/app.html</context>
+          <context context-type="linenumber">24,25</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="features.modern" datatype="html">
+        <source>Modern Angular architecture</source>
+        <target>Nowoczesna architektura Angular</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/app.html</context>
+          <context context-type="linenumber">25,27</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="demo.title" datatype="html">
+        <source>i18n Demo</source>
+        <target>Demo i18n</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/app.html</context>
+          <context context-type="linenumber">30,31</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="demo.current-time" datatype="html">
+        <source>Current time: <x id="INTERPOLATION" equiv-text="{{ currentTime | date:&apos;medium&apos; }}"/></source>
+        <target>Aktualna godzina: <x id="INTERPOLATION" equiv-text="{{ currentTime | date:&apos;medium&apos; }}"/></target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/app.html</context>
+          <context context-type="linenumber">31,33</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="demo.increment" datatype="html">
+        <source>Increment</source>
+        <target>Zwiększ</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/app.html</context>
+          <context context-type="linenumber">34,35</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="demo.decrement" datatype="html">
+        <source>Decrement</source>
+        <target>Zmniejsz</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/app.html</context>
+          <context context-type="linenumber">35,36</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="demo.counter" datatype="html">
+        <source>Items count: <x id="INTERPOLATION" equiv-text="{{ counter }}"/></source>
+        <target>Liczba elementów: <x id="INTERPOLATION" equiv-text="{{ counter }}"/></target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/app.html</context>
+          <context context-type="linenumber">36,37</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="locale.title" datatype="html">
+        <source>Locale Information</source>
+        <target>Informacje o lokalizacji</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/app.html</context>
+          <context context-type="linenumber">42,43</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="locale.current" datatype="html">
+        <source>Current locale: <x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/><x id="INTERPOLATION" equiv-text="{{ currentLocale }}"/><x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/></source>
+        <target>Aktualna lokalizacja: <x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/><x id="INTERPOLATION" equiv-text="{{ currentLocale }}"/><x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/></target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/app.html</context>
+          <context context-type="linenumber">43,44</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="locale.date-format" datatype="html">
+        <source>Date format example: <x id="INTERPOLATION" equiv-text="{{ currentTime | date:&apos;short&apos; }}"/></source>
+        <target>Przykład formatu daty: <x id="INTERPOLATION" equiv-text="{{ currentTime | date:&apos;short&apos; }}"/></target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/app.html</context>
+          <context context-type="linenumber">44,45</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="locale.currency-format" datatype="html">
+        <source>Currency format example: <x id="INTERPOLATION" equiv-text="{{ price | currency:currency:&apos;symbol&apos;:&apos;1.2-2&apos; }}"/></source>
+        <target>Przykład formatu waluty: <x id="INTERPOLATION" equiv-text="{{ price | currency:currency:&apos;symbol&apos;:&apos;1.2-2&apos; }}"/></target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/app.html</context>
+          <context context-type="linenumber">45,46</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="footer.copyright" datatype="html">
+        <source>© 2024 Angular i18n SSR Example. All rights reserved.</source>
+        <target>© 2024 Przykład Angular i18n SSR. Wszystkie prawa zastrzeżone.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/app.html</context>
+          <context context-type="linenumber">50,54</context>
+        </context-group>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

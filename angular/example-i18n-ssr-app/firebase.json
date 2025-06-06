@@ -1,0 +1,44 @@
+{
+  "hosting": {
+    "public": "dist/example-i18n-ssr-app/browser",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ],
+    "rewrites": [
+      {
+        "source": "/en/**",
+        "destination": "/en-US/index.html"
+      },
+      {
+        "source": "/pl/**",
+        "destination": "/pl/index.html"
+      },
+      {
+        "source": "**",
+        "destination": "/en-US/index.html"
+      }
+    ],
+    "headers": [
+      {
+        "source": "**/*.@(eot|otf|ttf|ttc|woff|font.css)",
+        "headers": [
+          {
+            "key": "Access-Control-Allow-Origin",
+            "value": "*"
+          }
+        ]
+      },
+      {
+        "source": "**/*.@(js|css)",
+        "headers": [
+          {
+            "key": "Cache-Control",
+            "value": "max-age=31536000"
+          }
+        ]
+      }
+    ]
+  }
+}
