@@ -2,11 +2,11 @@ import Link from "next/link"
 import { notFound } from "next/navigation"
 
 import { Revalidate } from "./Revalidate"
-// import { Purge } from './Purge'
+import { Purge } from "./Purge"
 
 async function getReports() {
   return Promise.resolve(
-    Array.from({ length: 1 }).map((_, i) => ({
+    Array.from({ length: 5 }).map((_, i) => ({
       id: i,
       data: `[${new Date().toLocaleTimeString("pt-BR")}] Report ${i}`,
     }))
@@ -34,7 +34,7 @@ export default async function ReportPage({ params }: { params: Promise<{ id: str
         {reports.map((report) => (
           <li key={report.id} style={{ display: "flex", margin: "10px auto", gap: "8px" }}>
             <Revalidate reportId={report.id} />
-            {/* <Purge reportId={report.id} /> */}
+            <Purge reportId={report.id} />
             <Link href={`/isr/${report.id}`}>go to /isr/{report.id}</Link>
           </li>
         ))}
