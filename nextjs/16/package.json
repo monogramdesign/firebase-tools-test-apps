@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
+    "build-pages-json": "bun run scripts/pages-json.ts",
     "dev": "next dev",
     "build": "next build",
     "start": "next start",

@@ -3,6 +3,8 @@
   "/_not-found",
   "/anchor",
   "/another-s-a",
+  "/api",
+  "/api/revalidate",
   "/app-image-test",
   "/authenticated",
   "/context",

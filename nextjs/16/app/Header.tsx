@@ -1,7 +1,11 @@
 import Link from "next/link"
 import pagePaths from "./pages.json"
+import { getReports } from "./isr/[id]/page"
 
-export function Header() {
+export async function Header() {
+  const reports = await getReports()
+
+  console.log(reports)
   return (
     <header>
       <nav
@@ -16,6 +20,11 @@ export function Header() {
         {pagePaths.map((pagePath) => (
           <Link key={pagePath} href={pagePath}>
             {pagePath}
+          </Link>
+        ))}
+        {reports.map((report) => (
+          <Link key={`report-${report.id}`} href={`/isr/${report.id}`}>
+            /isr/{report.id}
           </Link>
         ))}
       </nav>
