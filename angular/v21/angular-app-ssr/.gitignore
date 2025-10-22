@@ -15,6 +15,7 @@ yarn-error.log
 .idea/
 .project
 .classpath
+.firebase/*
 .c9/
 *.launch
 .settings/
