@@ -1,11 +1,10 @@
-import Link from "next/link"
-import pagePaths from "./pages.json"
-import { getReports } from "./isr/[id]/page"
+import Link from "next/link";
+import pagePaths from "./pages.json";
+import { getReports } from "./isr/[id]/page";
 
 export async function Header() {
-  const reports = await getReports()
+  const reports = await getReports();
 
-  console.log(reports)
   return (
     <header>
       <nav
@@ -29,5 +28,5 @@ export async function Header() {
         ))}
       </nav>
     </header>
-  )
+  );
 }

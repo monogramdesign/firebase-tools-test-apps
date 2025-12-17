@@ -1,4 +1,4 @@
-import Image from "next/image"
+import Image from "next/image";
 
 export default function ImageTest() {
   return (
@@ -8,5 +8,5 @@ export default function ImageTest() {
       width={1000}
       height={1000}
     />
-  )
+  );
 }

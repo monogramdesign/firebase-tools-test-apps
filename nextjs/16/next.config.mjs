@@ -1,4 +1,4 @@
-import rewrites from "./rewrites.mjs"
+import rewrites from "./rewrites.mjs";
 
 const nextConfig = {
   images: {
@@ -6,7 +6,11 @@ const nextConfig = {
     unoptimized: false,
   },
 
-  rewrites: async () => [{ source: "/monogram", destination: "https://monogram.io" }, ...rewrites],
-}
+  rewrites: async () => [
+    { source: "/monogram", destination: "https://monogram.io" },
+    { source: "/rewrite", destination: "/rewrite-target" },
+    ...rewrites,
+  ],
+};
 
-export default nextConfig
+export default nextConfig;
