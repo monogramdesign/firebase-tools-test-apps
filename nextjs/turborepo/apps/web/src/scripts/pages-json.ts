@@ -35,7 +35,7 @@ import { join } from "path"
   )
 
   await writeFile(
-    join(process.cwd(), "app", "pages.json"),
+    join(process.cwd(), "src", "app", "pages.json"),
     JSON.stringify([...pagePaths, "/dynamic-routes/2"], null, 2)
   )
   console.log("file written!")
