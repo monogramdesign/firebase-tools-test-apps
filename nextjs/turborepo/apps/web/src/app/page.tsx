@@ -1,5 +1,7 @@
 import Image from 'next/image'
 import styles from './page.module.css'
+import { Button } from "@repo/ui/button";
+import { capitalize, formatDate } from "@repo/utils";
 
 export default function Home() {
   return (
@@ -29,14 +31,24 @@ export default function Home() {
       </div>
 
       <div className={styles.center}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
+        <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '20px' }}>
+          <Image
+            className={styles.logo}
+            src="/next.svg"
+            alt="Next.js Logo"
+            width={180}
+            height={37}
+            priority
+          />
+          <div style={{ padding: '20px', border: '1px solid #ccc', borderRadius: '8px' }}>
+            <h3>Monorepo Component Test</h3>
+            <p>Today is: {formatDate(new Date())}</p>
+            <p>{capitalize("hello from shared utils!")}</p>
+            <div style={{ marginTop: '10px' }}>
+              <Button appName="web">Click me!</Button>
+            </div>
+          </div>
+        </div>
       </div>
 
       <div className={styles.grid}>
