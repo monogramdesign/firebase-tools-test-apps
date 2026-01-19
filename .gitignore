@@ -1,2 +1,4 @@
 **/.firebase
 *.code-workspace
+.nuxt
+node_modules
