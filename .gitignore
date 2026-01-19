@@ -2,3 +2,4 @@
 *.code-workspace
 .nuxt
 node_modules
+.output
