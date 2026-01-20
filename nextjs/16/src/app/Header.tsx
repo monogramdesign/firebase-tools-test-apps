@@ -1,6 +1,6 @@
 import Link from "next/link";
 import pagePaths from "./pages.json";
-import { getReports } from "./isr/[id]/page";
+import { getReports } from "./isr/[id]/utils";
 
 export async function Header() {
   const reports = await getReports();

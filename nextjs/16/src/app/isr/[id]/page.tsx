@@ -3,15 +3,7 @@ import { notFound } from "next/navigation"
 
 import { Revalidate } from "./Revalidate"
 import { Purge } from "./Purge"
-
-export async function getReports() {
-  return Promise.resolve(
-    Array.from({ length: 5 }).map((_, i) => ({
-      id: i,
-      data: `[${new Date().toLocaleTimeString("pt-BR")}] Report ${i}`,
-    }))
-  )
-}
+import { getReports } from "./utils"
 
 const findReport = async (id: string) =>
   (await getReports()).find((report) => report.id === Number(id))
