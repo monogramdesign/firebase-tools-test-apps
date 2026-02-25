@@ -18,7 +18,18 @@ document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
     <p class="read-the-docs">
       Click on the Vite and TypeScript logos to learn more
     </p>
+    <div id="api-response">Loading API...</div>
   </div>
 `
 
 setupCounter(document.querySelector<HTMLButtonElement>('#counter')!)
+
+fetch('/api/hello')
+  .then(res => res.json())
+  .then(data => {
+    document.querySelector<HTMLDivElement>('#api-response')!.innerText = data.message;
+  })
+  .catch(err => {
+    document.querySelector<HTMLDivElement>('#api-response')!.innerText = 'Error loading API';
+    console.error(err);
+  });
