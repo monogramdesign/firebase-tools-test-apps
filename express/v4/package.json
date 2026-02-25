@@ -1,0 +1,19 @@
+{
+  "name": "express-test-app",
+  "version": "1.0.0",
+  "main": "server.js",
+  "scripts": {
+    "build": "cp -r public dist",
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.21.0"
+  },
+  "directories": {
+    "serve": "dist"
+  },
+  "files": [
+    "dist",
+    "server.js"
+  ]
+}
