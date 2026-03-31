@@ -1,9 +1,6 @@
-import Image from "next/image"
+"use client"
 
-export const metadata = {
-  title: "Next.js 15.5.x Image Test",
-  description: "Testing next/image detection in App Router-only projects",
-}
+import Image from "next/image"
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
