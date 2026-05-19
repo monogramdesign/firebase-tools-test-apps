@@ -1,12 +1,11 @@
-import { Component, signal } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
-  templateUrl: './app.html',
-  styleUrl: './app.scss'
+  standalone: true,
+  template: `
+    <h1>Angular v21 SSR Test</h1>
+    <p>Status: Working</p>
+  `
 })
-export class App {
-  protected readonly title = signal('angular-app-ssr');
-}
+export class App {}
