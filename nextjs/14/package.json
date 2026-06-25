@@ -1,0 +1,23 @@
+{
+  "name": "next14",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "firebase-tools": "github:firebase/firebase-tools#leoortizz_frameworks500fix",
+    "next": "14.2.35",
+    "react": "^18",
+    "react-dom": "^18"
+  },
+  "devDependencies": {
+    "@types/node": "20.19.39",
+    "@types/react": "18.3.28",
+    "@types/react-dom": "^18",
+    "typescript": "5.9.3"
+  }
+}
