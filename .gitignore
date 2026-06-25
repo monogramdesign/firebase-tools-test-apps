@@ -1,5 +1,18 @@
 **/.firebase
 *.code-workspace
-.nuxt
 node_modules
+
+# Build / dist output
+dist
+build
+.next
+.nuxt
 .output
+.svelte-kit
+.astro
+.angular
+.vercel
+
+# Debug logs
+*-debug.log
+*-debug.*.log
