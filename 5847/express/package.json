@@ -1,0 +1,9 @@
+{
+  "name": "express-ssr-app",
+  "version": "0.0.0",
+  "type": "module",
+  "main": "server.js",
+  "directories": { "serve": "public" },
+  "scripts": { "build": "node -e \"console.log('no-op build')\"" },
+  "dependencies": { "express": "^4.19.2" }
+}
