@@ -1,0 +1,19 @@
+{
+  "emulators": {
+    "apphosting": {
+      "startCommand": "npm run build && node dist/server/entry.mjs",
+      "rootDirectory": "."
+    }
+  },
+  "apphosting": {
+    "backendId": "astro5-test",
+    "rootDir": "/",
+    "ignore": [
+      "node_modules",
+      ".git",
+      "firebase-debug.log",
+      "firebase-debug.*.log",
+      "functions"
+    ]
+  }
+}

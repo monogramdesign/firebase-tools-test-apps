@@ -1,0 +1,16 @@
+{
+  "name": "apphosting-adapter-astro-v6",
+  "type": "module",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "build": "astro build",
+    "preview": "astro preview"
+  },
+  "dependencies": {
+    "@apphosting/astro-adapter": "file:vendor/apphosting-astro-adapter-0.0.2.tgz",
+    "@apphosting/common": "file:vendor/apphosting-common-0.0.9.tgz",
+    "@astrojs/node": "^10.0.0",
+    "astro": "^6.0.0"
+  }
+}

@@ -10,6 +10,7 @@ build
 .output
 .svelte-kit
 .astro
+.apphosting
 .angular
 .vercel
 
