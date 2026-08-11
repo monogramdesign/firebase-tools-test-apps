@@ -8,8 +8,7 @@
     "preview": "astro preview"
   },
   "dependencies": {
-    "@apphosting/astro-adapter": "file:vendor/apphosting-astro-adapter-0.0.2.tgz",
-    "@apphosting/common": "file:vendor/apphosting-common-0.0.9.tgz",
+    "@apphosting/astro-adapter": "^0.0.2-rc.0",
     "@astrojs/node": "^11.0.0",
     "astro": "^7.0.0"
   }
