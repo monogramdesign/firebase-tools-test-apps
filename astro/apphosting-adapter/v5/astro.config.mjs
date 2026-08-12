@@ -2,7 +2,10 @@
 import { defineConfig } from 'astro/config';
 import node from '@apphosting/astro-adapter';
 
+// https://astro.build/config
 export default defineConfig({
   output: 'server',
-  adapter: node({ mode: 'standalone' }),
+  adapter: node({
+    mode: 'standalone',
+  }),
 });

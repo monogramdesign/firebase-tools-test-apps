@@ -1,12 +1,54 @@
 ---
-const now = new Date().toISOString();
-const name = Astro.url.searchParams.get("name") ?? "world";
+import { Image } from 'astro:assets';
+import logo from '../assets/logo.png';
+
+const serverTime = new Date().toISOString();
 ---
 <html lang="en">
-	<head><meta charset="utf-8" /><title>Astro v7 + apphosting-adapter</title></head>
+	<head>
+		<meta charset="utf-8" />
+		<title>Astro v7 + apphosting-adapter</title>
+		<style>
+			body { font-family: system-ui, sans-serif; max-width: 44rem; margin: 2rem auto; padding: 0 1rem; }
+			li { margin: .6rem 0; }
+			output { font-family: ui-monospace, monospace; font-size: .8125rem; }
+		</style>
+	</head>
 	<body>
-		<h1>Astro v7 + apphosting-adapter</h1>
-		<p id="ssr-time">{now}</p>
-		<p id="ssr-name">Hello, {name}!</p>
+		<h1>Astro v7 &middot; apphosting-adapter</h1>
+		<p>Rendered on the server at {serverTime}</p>
+		<Image id="opt-img" src={logo} alt="logo" width={64} height={64} />
+		<ul>
+			<li><button id="btn-ssr">SSR</button> <output id="out-ssr"></output></li>
+			<li><button id="btn-static">Static</button> <output id="out-static"></output></li>
+			<li><button id="btn-image">Image</button> <output id="out-image"></output></li>
+			<li><button id="btn-mw">Middleware</button> <output id="out-mw"></output></li>
+		</ul>
+		<script>
+			const on = (id: string, out: string, fn: () => Promise<unknown>) =>
+				document.getElementById(id)!.addEventListener("click", async () => {
+					document.getElementById(out)!.textContent = JSON.stringify(await fn());
+				});
+
+			on("btn-ssr", "out-ssr", async () => {
+				const res = await fetch(`/api/hello?_=${Date.now()}`);
+				return await res.json();
+			});
+
+			on("btn-static", "out-static", async () => {
+				const res = await fetch(`/build.json?_=${Date.now()}`);
+				return await res.json();
+			});
+
+			on("btn-image", "out-image", async () => {
+				const res = await fetch((document.getElementById("opt-img") as HTMLImageElement).src);
+				return { status: res.status, type: res.headers.get("content-type"), bytes: (await res.arrayBuffer()).byteLength };
+			});
+
+			on("btn-mw", "out-mw", async () => {
+				const res = await fetch(`/?_=${Date.now()}`);
+				return { "x-middleware-ran": res.headers.get("x-middleware-ran") };
+			});
+		</script>
 	</body>
 </html>
