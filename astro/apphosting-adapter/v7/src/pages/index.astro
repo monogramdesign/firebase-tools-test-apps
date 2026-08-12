@@ -11,7 +11,11 @@ const serverTime = new Date().toISOString();
 		<style>
 			body { font-family: system-ui, sans-serif; max-width: 44rem; margin: 2rem auto; padding: 0 1rem; }
 			li { margin: .6rem 0; }
-			output { font-family: ui-monospace, monospace; font-size: .8125rem; }
+			output { font-family: ui-monospace, monospace; font-size: .8125rem; word-break: break-all; }
+			fieldset { margin: 1rem 0; }
+			label { margin-right: .75rem; }
+			input, select { width: 5.5rem; }
+			#opt-result { display: block; margin-top: .5rem; border: 1px solid #ccc; }
 		</style>
 	</head>
 	<body>
@@ -21,9 +25,27 @@ const serverTime = new Date().toISOString();
 		<ul>
 			<li><button id="btn-ssr">SSR</button> <output id="out-ssr"></output></li>
 			<li><button id="btn-static">Static</button> <output id="out-static"></output></li>
-			<li><button id="btn-image">Image</button> <output id="out-image"></output></li>
 			<li><button id="btn-mw">Middleware</button> <output id="out-mw"></output></li>
 		</ul>
+
+		<fieldset>
+			<legend>Image optimization</legend>
+			<label>w <input id="in-w" type="number" value="64" /></label>
+			<label>h <input id="in-h" type="number" value="64" /></label>
+			<label>f
+				<select id="in-f">
+					<option>webp</option>
+					<option>avif</option>
+					<option>png</option>
+					<option>jpeg</option>
+				</select>
+			</label>
+			<label>q <input id="in-q" type="number" value="80" /></label>
+			<button id="btn-opt">Optimize</button>
+			<output id="out-opt"></output>
+			<img id="opt-result" alt="optimized result" />
+		</fieldset>
+
 		<script>
 			const on = (id: string, out: string, fn: () => Promise<unknown>) =>
 				document.getElementById(id)!.addEventListener("click", async () => {
@@ -40,14 +62,22 @@ const serverTime = new Date().toISOString();
 				return await res.json();
 			});
 
-			on("btn-image", "out-image", async () => {
-				const res = await fetch((document.getElementById("opt-img") as HTMLImageElement).src);
-				return { status: res.status, type: res.headers.get("content-type"), bytes: (await res.arrayBuffer()).byteLength };
-			});
-
 			on("btn-mw", "out-mw", async () => {
 				const res = await fetch(`/?_=${Date.now()}`);
 				return { "x-middleware-ran": res.headers.get("x-middleware-ran") };
+			});
+
+			on("btn-opt", "out-opt", async () => {
+				const base = (document.getElementById("opt-img") as HTMLImageElement).getAttribute("src")!;
+				const href = new URL(base, location.origin).searchParams.get("href")!;
+				const value = (id: string) => (document.getElementById(id) as HTMLInputElement).value;
+				const url =
+					`/_image?href=${encodeURIComponent(href)}` +
+					`&w=${value("in-w")}&h=${value("in-h")}&f=${value("in-f")}&q=${value("in-q")}`;
+				const res = await fetch(url);
+				const bytes = (await res.arrayBuffer()).byteLength;
+				(document.getElementById("opt-result") as HTMLImageElement).src = url;
+				return { url, status: res.status, type: res.headers.get("content-type"), bytes };
 			});
 		</script>
 	</body>
